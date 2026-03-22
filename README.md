@@ -24,9 +24,11 @@ O projeto foi construído utilizando uma arquitetura modularizada:
 - Python 3.12+
 - Docker e Docker Compose
 - Um _Personal Access Token_ do GitHub
-- Crie um .env com :GITHUB_TOKEN=seu_token_aqui | DATABASE_URL=postgresql://postgres:postgres@localhost:5432/github_db
+- Crie um .env com :
+-- GITHUB_TOKEN=seu_token_aqui | DATABASE_URL=postgresql://postgres:postgres@localhost:5432/github_db
   -docker-compose up -d (para subir toda a infra do banco de dados)
-  -python3 -m venv venv | source venv/bin/activate | pip install -r requirements.txt
+  -python3 -m venv venv
+-- source venv/bin/activate | pip install -r requirements.txt
 
 ### Execução:
 
