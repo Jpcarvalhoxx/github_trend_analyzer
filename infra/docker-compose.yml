@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # O Banco de Dados PostgreSQL
+  postgres_db:
+    image: postgres:15
+    container_name: github_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+      POSTGRES_DB: github_db
+    ports:
+      - "5432:5432"
+    volumes:
+      # Script que cria as tabelas com as CONSTRAINTS automaticamente
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      # Volume para os dados não sumirem ao desligar o container
+      - postgres_data:/var/lib/postgresql/data
+
+  # Interface visual (Adminer) para você ver as tabelas no navegador
+  adminer:
+    image: adminer
+    container_name: github_adminer
+    restart: always
+    ports:
+      - "8081:8080"
+
+volumes:
+  postgres_data:
