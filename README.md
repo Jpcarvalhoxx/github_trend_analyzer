@@ -32,7 +32,8 @@ O projeto foi construído utilizando uma arquitetura modularizada:
     DATABASE_URL=postgresql://postgres:postgres@localhost:5432/github_db-docker-compose up -d (para subir toda a infra do banco de dados)
    ```
 -python3 -m venv venv
--- source venv/bin/activate | pip install -r requirements.txt
+-source venv/bin/activate 
+-pip install -r requirements.txt
 
 ### Execução:
 
